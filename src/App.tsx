@@ -3,6 +3,7 @@ import "./App.scss";
 import HelloWorld from "./components/ex1/HelloWorld";
 import Animals from "./components/ex2/Animals";
 import ButtonClick from "./components/ex4/ButtonClick";
+import Checkbox from "./components/ex3/Checkbox";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       {/* <HelloWorld />; */}
       {/* <Animals /> */}
       <ButtonClick />
+      {/* <Checkbox /> */}
     </Fragment>
   );
 }

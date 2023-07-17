@@ -16,7 +16,9 @@ const ButtonClick = () => {
   return (
     <div className={styles.container}>
       <div>Button has been click: {count} times</div>
-      <button onClick={increaseCountHandler}>Click Me</button>
+      <button className={styles.increaseBtn} onClick={increaseCountHandler}>
+        Click Me
+      </button>
       <button onClick={resetCountHandler}>Reset Count</button>
     </div>
   );
