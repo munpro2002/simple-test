@@ -1,0 +1,24 @@
+.container {
+  position: relative;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.animals-block {
+  display: flex;
+  justify-content: center;
+
+  div {
+    width: 150px;
+    height: 50px;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+    margin-inline: 24px 12px;
+  }
+}
