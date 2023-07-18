@@ -1,0 +1,54 @@
+.container {
+  width: 560px;
+  height: 400px;
+  position: relative;
+  margin-inline: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  border-radius: 6px;
+
+  img {
+    position: absolute;
+    border-radius: 6px;
+    transition: all ease 300ms;
+  }
+
+  .btn {
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 80px;
+    font-size: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    opacity: 0.5;
+    transition: all ease-in-out 300ms;
+  }
+
+  .btn:hover {
+    opacity: 0.8;
+    cursor: pointer;
+  }
+
+  .leftBtn {
+    left: 3%;
+  }
+
+  .rightBtn {
+    right: 3%;
+  }
+
+  .active {
+    opacity: 1;
+  }
+
+  .disabled {
+    opacity: 0;
+  }
+}

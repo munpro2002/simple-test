@@ -1,0 +1,27 @@
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 650px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-inline: auto;
+  row-gap: 15px;
+
+  .user-cart {
+    box-sizing: border-box;
+    padding: 16px;
+    width: 300px;
+    background-color: white;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    img {
+      width: 100%;
+    }
+
+    p,
+    h3 {
+      margin: 0px;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 10px;
+
+  a {
+    color: rgb(63, 63, 63);
+    text-decoration: none;
+    padding: 6px 10px;
+    display: inline-block;
+    margin-inline: 10px;
+    background-color: #ccc;
+    flex-shrink: 0;
+    border-radius: 4px;
+    transition: all ease 0.3;
+  }
+
+  a:hover {
+    background-color: rgb(123, 249, 249);
+    transform: scale(1.07);
+  }
+}
