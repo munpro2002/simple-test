@@ -1,0 +1,22 @@
+.container {
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  position: relative;
+  top: 30%;
+
+  input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+  }
+
+  button {
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 6px;
+  }
+}
