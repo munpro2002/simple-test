@@ -15,7 +15,7 @@ const FilterSearch = () => {
 
   const filterSearchHandler = (e: any) => {
     const filterFruits = FRUITS.filter((fruit) => {
-      return fruit.toLowerCase().includes(e.target.value.toLowerCase());
+      return fruit.toLowerCase().includes(e.target.value.toLowerCase().trim());
     });
 
     setFruits(filterFruits);

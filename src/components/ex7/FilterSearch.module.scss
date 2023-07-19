@@ -6,7 +6,12 @@
   top: 20%;
 
   .input-field {
-    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+
     input {
       padding: 6px 12px;
       outline: none;

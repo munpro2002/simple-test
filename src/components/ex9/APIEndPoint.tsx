@@ -4,7 +4,12 @@ import axios from "axios";
 
 const APIEndPoint = () => {
   const [data, setData] = useState([]);
+  const [fetch, setFetch] = useState(true);
   const [loading, setLoading] = useState(true);
+
+  const fetchRandomHandler = () => {
+    setFetch((prev) => !prev);
+  };
 
   useEffect(() => {
     axios
@@ -18,23 +23,28 @@ const APIEndPoint = () => {
           setLoading(false);
         }, 2000);
       });
-  }, []);
+  }, [fetch]);
 
   return (
     <div className={styles.container}>
-      {!loading &&
-        data.map((user, index) => {
-          return (
-            <div className={styles["user-cart"]} key={index}>
-              <img src={user["avatar"]} />
-              <h3>
-                {user["first_name"]} {user["last_name"]}
-              </h3>
-              <p>{user["employment"]["title"]}</p>
-            </div>
-          );
-        })}
-      {loading && <h1>Please wait a second...</h1>}
+      <button onClick={fetchRandomHandler} className={styles["fetch-btn"]}>
+        Fetch Random
+      </button>
+      <div className={styles["user-list"]}>
+        {!loading &&
+          data.map((user, index) => {
+            return (
+              <div className={styles["user-cart"]} key={index}>
+                <img src={user["avatar"]} alt="user info" />
+                <h3>
+                  {user["first_name"]} {user["last_name"]}
+                </h3>
+                <p>{user["employment"]["title"]}</p>
+              </div>
+            );
+          })}
+        {loading && <h1>Please wait a second...</h1>}
+      </div>
     </div>
   );
 };

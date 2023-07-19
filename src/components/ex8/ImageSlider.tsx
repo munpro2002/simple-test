@@ -1,7 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import styles from "./ImageSlider.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleLeft, faAngleRight } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleLeft,
+  faAngleRight,
+  faPause,
+  faPlay,
+} from "@fortawesome/free-solid-svg-icons";
 
 const IMG_ARRAY = [
   "https://kenwheeler.github.io/slick/img/fonz3.png",
@@ -11,23 +16,29 @@ const IMG_ARRAY = [
 
 const ImageSlider = () => {
   const [currImg, setCurImg] = useState(2);
+  const [isPlaying, setIsPlaying] = useState(true);
+
   const length = IMG_ARRAY.length;
 
-  const nextSlideHandler = () => {
+  const nextSlideHandler = useCallback(() => {
     setCurImg(currImg === length - 1 ? 0 : currImg + 1);
-  };
+  }, [currImg, length]);
 
   const prevSlideHandler = () => {
     setCurImg(currImg === 0 ? length - 1 : currImg - 1);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurImg(currImg === length - 1 ? 0 : currImg + 1);
-    }, 3000);
+  const pauseSlideHandler = () => {
+    setIsPlaying((prev) => !prev);
+  };
 
-    return () => clearInterval(interval);
-  });
+  useEffect(() => {
+    if (!isPlaying) {
+      const interval = setInterval(() => nextSlideHandler(), 3000);
+
+      return () => clearInterval(interval);
+    }
+  }, [isPlaying, nextSlideHandler]);
 
   return (
     <div className={styles.container}>
@@ -43,12 +54,20 @@ const ImageSlider = () => {
       >
         <FontAwesomeIcon icon={faAngleRight} />
       </div>
+      <div
+        onClick={pauseSlideHandler}
+        className={`${styles.slideCtrlBtn} ${styles.btn}`}
+      >
+        {!isPlaying && <FontAwesomeIcon icon={faPause} />}
+        {isPlaying && <FontAwesomeIcon icon={faPlay} />}
+      </div>
       {IMG_ARRAY.map((img, index) => {
         return (
           <img
             className={styles[`${currImg === index ? "active" : "disabled"}`]}
             key={index}
             src={img}
+            alt={`slider ${index}`}
           />
         );
       })}

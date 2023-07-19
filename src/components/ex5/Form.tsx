@@ -19,7 +19,7 @@ const RegisterForm = () => {
       <input
         value={firstName}
         onChange={(e) => {
-          setFirstName(e.target.value);
+          setFirstName(e.target.value.trim());
         }}
         type="text"
         placeholder="First Name"
@@ -28,7 +28,7 @@ const RegisterForm = () => {
       <input
         value={lastName}
         onChange={(e) => {
-          setLastName(e.target.value);
+          setLastName(e.target.value.trim());
         }}
         type="text"
         placeholder="Last Name"

@@ -1,5 +1,5 @@
 .container {
-  width: 560px;
+  max-width: 560px;
   height: 400px;
   position: relative;
   margin-inline: auto;
@@ -12,6 +12,7 @@
     position: absolute;
     border-radius: 6px;
     transition: all ease 300ms;
+    width: 100%;
   }
 
   .btn {
@@ -42,6 +43,24 @@
 
   .rightBtn {
     right: 3%;
+  }
+
+  .slideCtrlBtn {
+    position: absolute;
+    z-index: 10;
+    background-color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    opacity: 0.3;
+    transition: all ease-in-out 300ms;
   }
 
   .active {

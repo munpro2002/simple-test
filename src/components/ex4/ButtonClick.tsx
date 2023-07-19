@@ -5,8 +5,7 @@ const ButtonClick = () => {
   const [count, setCount] = useState(0);
 
   const increaseCountHandler = () => {
-    console.log("hello");
-    setCount((prev) => (prev = prev + 1));
+    setCount((prev) => prev + 1);
   };
 
   const resetCountHandler = () => {

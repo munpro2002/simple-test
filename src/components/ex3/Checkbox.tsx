@@ -7,8 +7,6 @@ const Checkbox = () => {
   const [checkedFruits, setCheckedFruits] = useState<string[]>([]);
 
   const fruitCheckHandler = (e: any) => {
-    console.log(e.target.value);
-
     if (e.target.checked) {
       setCheckedFruits((prev) => {
         let newCheckedFruits: string[] = [...prev, e.target.value];
