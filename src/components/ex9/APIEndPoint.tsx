@@ -6,8 +6,6 @@ const APIEndPoint = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  console.log(data);
-
   useEffect(() => {
     axios
       .get("https://random-data-api.com/api/users/random_user?size=10")

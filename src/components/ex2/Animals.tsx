@@ -20,9 +20,9 @@ const ANIMALS_DATA = [
 const Animals = () => {
   return (
     <div className={styles.container}>
-      {ANIMALS_DATA.map((animal) => {
+      {ANIMALS_DATA.map((animal, index) => {
         return (
-          <div className={styles["animals-block"]}>
+          <div key={index} className={styles["animals-block"]}>
             <div>
               <img src={animal.img} alt={animal.name} />
               <p>{animal.name}</p>
