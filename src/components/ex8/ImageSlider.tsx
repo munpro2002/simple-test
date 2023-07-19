@@ -33,7 +33,7 @@ const ImageSlider = () => {
   };
 
   useEffect(() => {
-    if (!isPlaying) {
+    if (isPlaying) {
       const interval = setInterval(() => nextSlideHandler(), 3000);
 
       return () => clearInterval(interval);
@@ -58,8 +58,8 @@ const ImageSlider = () => {
         onClick={pauseSlideHandler}
         className={`${styles.slideCtrlBtn} ${styles.btn}`}
       >
-        {!isPlaying && <FontAwesomeIcon icon={faPause} />}
-        {isPlaying && <FontAwesomeIcon icon={faPlay} />}
+        {isPlaying && <FontAwesomeIcon icon={faPause} />}
+        {!isPlaying && <FontAwesomeIcon icon={faPlay} />}
       </div>
       {IMG_ARRAY.map((img, index) => {
         return (
