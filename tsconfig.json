@@ -22,5 +22,4 @@
     "typeRoots" : ["node_modules/@types", "src/types"],
     "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": ["./src/types/declaration.d.ts"]
 }
