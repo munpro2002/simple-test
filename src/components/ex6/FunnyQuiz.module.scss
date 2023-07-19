@@ -9,6 +9,7 @@
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  flex-wrap: wrap;
 
   .card {
     width: 380px;
